@@ -23,6 +23,11 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t j, i, k;
 	bool swapd;
+	/**
+	*swapd is an early exit. This is an optimazation technique.
+	*If there are no swaps perfomed, the loop breaks since the
+	*list is already sorted
+	*/
 
 	for (i = 0; i < size - 1; i++)
 	{
