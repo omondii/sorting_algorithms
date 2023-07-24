@@ -20,7 +20,7 @@ void _swap(int *a, int *b)
   * @size: size of array
   * Return: pivot index
   */
-int lomuto(int *array, int size, int low, int high)
+int lomuto(int *array, size_t size, int low, int high)
 {
 	/* initialize pivot*/
 	int i, j, pivot = array[high];
@@ -32,11 +32,18 @@ int lomuto(int *array, int size, int low, int high)
 		if (array[j] < pivot)
 		{
 			i++;
-			_swap(&array[i], &array[j]);
+			if (array[i] != array[j])
+			{
+				_swap(&array[i], &array[j]);
+				print_array(array, size);
+			}
 		}
 	}
-	_swap(&array[i + 1], &array[high]);
-	print_array(array, size);
+	if (array[i] != array[high])
+	{
+		_swap(&array[i + 1], &array[high]);
+		print_array(array, size);
+	}
 	return (i + 1);
 }
 
@@ -48,7 +55,7 @@ int lomuto(int *array, int size, int low, int high)
   * @size: size of array
   * Return: void
   */
-void _quick_sort(int *array, int size, int low, int high)
+void _quick_sort(int *array, size_t size, int low, int high)
 {
 	if (low < high)
 	{
