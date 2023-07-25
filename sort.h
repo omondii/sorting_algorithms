@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 typedef struct listint_s
@@ -17,6 +18,7 @@ void bubble_sort(int *array, size_t size);
 void swap(int *a, int *b);
 void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
-
+void shell_sort(int *array, size_t size);
+void knuth(int *sequence, int size);
 
 #endif
