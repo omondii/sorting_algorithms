@@ -28,5 +28,6 @@ void quick_sort(int *array, size_t size);
 listint_t *swap_node(listint_t *temp, listint_t **list);
 void shell_sort(int *array, size_t size);
 void knuth(int *sequence, int size);
+void counting_sort(int *array, size_t size);
 
 #endif
